@@ -23,7 +23,7 @@ class UserStore extends GetxController {
   void onInit() {
     super.onInit();
     token = StorageService.to.getString(STORAGE_USER_TOKEN_KEY);
-    var profileOffline = StorageService.to.getString(STORAGE_USER_PROFILE_KEY);
+    var profileOffline = StorageService.to.getString(storageuserprofilekey);
     if (profileOffline.isNotEmpty) {
       _isLogin.value = true;
       _profile(UserItem.fromJson(jsonDecode(profileOffline)));
@@ -42,13 +42,13 @@ class UserStore extends GetxController {
     // var result = await UserAPI.profile();
     // _profile(result);
     // _isLogin.value = true;
-    return StorageService.to.getString(STORAGE_USER_PROFILE_KEY);
+    return StorageService.to.getString(storageuserprofilekey);
   }
 
   // 保存 profile
   Future<void> saveProfile(UserItem profile) async {
     _isLogin.value = true;
-    StorageService.to.setString(STORAGE_USER_PROFILE_KEY, jsonEncode(profile));
+    StorageService.to.setString(storageuserprofilekey, jsonEncode(profile));
     _profile(profile);
     setToken(profile.accesstoken!);
   }
@@ -57,7 +57,7 @@ class UserStore extends GetxController {
   Future<void> onLogout() async {
     // if (_isLogin.value) await UserAPI.logout();
     await StorageService.to.remove(STORAGE_USER_TOKEN_KEY);
-    await StorageService.to.remove(STORAGE_USER_PROFILE_KEY);
+    await StorageService.to.remove(storageuserprofilekey);
     _isLogin.value = false;
     token = '';
     Get.offAllNamed(AppRoutes.signin);
