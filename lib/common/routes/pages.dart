@@ -1,3 +1,4 @@
+import 'package:chat_app/modules/frame/welcome/index.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -5,17 +6,18 @@ import 'package:get/get.dart';
 import 'routes.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.INITIAL;
+  static const initial = AppRoutes.initial;
   static final RouteObserver<Route> observer = RouteObservers();
   static List<String> history = [];
 
   static final List<GetPage> routes = [
-    // boot up the app
-    // GetPage(
-    //   name: AppRoutes.INITIAL,
-    //   page: () => const WelcomePage(),
-    //   binding: WelcomeBindings(),
-    // ),
+    //boot up the app
+    GetPage(
+      name: AppRoutes.initial,
+      page: () => const WelcomePage(),
+      binding: WelcomeBindings(),
+    ),
+
     //sign_in page
     // GetPage(
     //   name: AppRoutes.SIGN_IN,

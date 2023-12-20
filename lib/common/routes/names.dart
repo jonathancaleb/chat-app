@@ -1,5 +1,5 @@
 class AppRoutes {
-  static const INITIAL = '/';
+  static const initial = '/';
   static const SIGN_IN = '/sign_in';
   static const EmailLogin = '/email_login';
   static const Register = '/register';
@@ -21,5 +21,4 @@ class AppRoutes {
 
   static const VoiceCall = '/voicecall';
   static const VideoCall = '/videocall';
-
 }

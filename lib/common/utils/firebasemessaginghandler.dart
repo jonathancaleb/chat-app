@@ -52,8 +52,8 @@ class FirebaseMassagingHandler {
       RemoteMessage? initialMessage =
           await FirebaseMessaging.instance.getInitialMessage();
       if (initialMessage != null) {
-        print("initialMessage------");
-        print(initialMessage);
+        Get.log("initialMessage------");
+        Get.log(initialMessage as String);
       }
       var initializationSettingsAndroid =
           const AndroidInitializationSettings("ic_launcher");
@@ -71,17 +71,17 @@ class FirebaseMassagingHandler {
               alert: true, badge: true, sound: true);
 
       FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
-        print("\n notification on onMessage function \n");
-        print(message);
+        Get.log("\n notification on onMessage function \n");
+        Get.log(message as String);
         _receiveNotification(message);
       });
     } on Exception catch (e) {
-      print("$e");
+      Get.log("$e");
     }
   }
 
   static Future<void> _receiveNotification(RemoteMessage message) async {
-    if (message.data != null && message.data["call_type"] != null) {
+    if (message.data["call_type"] != null) {
       //  ////1. voice 2. video 3. text, 4.cancel
       if (message.data["call_type"] == "voice") {
         //  FirebaseMassagingHandler.flutterLocalNotificationsPlugin.cancelAll();

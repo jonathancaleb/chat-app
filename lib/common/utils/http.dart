@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 //import 'package:dio/adapter.dart';
-import 'package:dio_http2_adapter/dio_http2_adapter.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:chat_app/common/store/store.dart';
 import 'package:chat_app/common/utils/utils.dart';
@@ -124,9 +122,7 @@ class HttpUtil {
         return ErrorEntity(code: -1, message: "请求超时");
       case DioExceptionType.receiveTimeout:
         return ErrorEntity(code: -1, message: "响应超时");
-      case DioExceptionType.sendTimeout:
-        return ErrorEntity(code: -1, message: "请求取消");
-      case DioExceptionType.response:
+      case DioExceptionType.badCertificate:
         {
           try {
             int errCode =
@@ -169,7 +165,7 @@ class HttpUtil {
         }
       default:
         {
-          return ErrorEntity(code: -1, message: error.message);
+          return ErrorEntity(code: -1, message: "hi change me in future");
         }
     }
   }
