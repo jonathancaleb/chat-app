@@ -1,6 +1,6 @@
 class AppRoutes {
   static const initial = '/';
-  static const SIGN_IN = '/sign_in';
+  static const signin = '/sign_in';
   static const EmailLogin = '/email_login';
   static const Register = '/register';
   static const Forgot = '/forgot';
@@ -11,7 +11,7 @@ class AppRoutes {
   //contact
   static const Contact = '/contact';
   // message
-  static const Message = '/message';
+  static const message = '/message';
 
   static const Profile = '/profile';
   //chat

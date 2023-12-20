@@ -1,9 +1,13 @@
 import 'package:chat_app/common/routes/routes.dart';
+import 'package:chat_app/global.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-void main() {
+Future<void> main() async {
+  //inject config files first
+  await Global.init();
   runApp(const MyApp());
 }
 

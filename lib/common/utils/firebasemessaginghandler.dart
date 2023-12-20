@@ -38,6 +38,7 @@ class FirebaseMassagingHandler {
   static Future<void> config() async {
     FirebaseMessaging messaging = FirebaseMessaging.instance;
     try {
+      // ignore: unused_local_variable
       RemoteMessage newMessage = const RemoteMessage();
       await messaging.requestPermission(
         sound: true,

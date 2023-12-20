@@ -1,3 +1,6 @@
+import 'package:chat_app/common/middlewares/router_auth.dart';
+import 'package:chat_app/modules/frame/message/index.dart';
+import 'package:chat_app/modules/frame/signin/index.dart';
 import 'package:chat_app/modules/frame/welcome/index.dart';
 import 'package:flutter/material.dart';
 
@@ -19,11 +22,11 @@ class AppPages {
     ),
 
     //sign_in page
-    // GetPage(
-    //   name: AppRoutes.SIGN_IN,
-    //   page: () => const SignInPage(),
-    //   binding: SignInBindings(),
-    // ),
+    GetPage(
+      name: AppRoutes.signin,
+      page: () => const SignInPage(),
+      binding: SignInBindings(),
+    ),
     /*
     // 需要登录
     // GetPage(
@@ -42,17 +45,17 @@ class AppPages {
     GetPage(name: AppRoutes.Phone, page: () => PhonePage(), binding: PhoneBinding()),
     GetPage(name: AppRoutes.SendCode, page: () => SendCodePage(), binding: SendCodeBinding()),
     // 首页
-    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
-    
-    */ //message
-    // GetPage(
-    //   name: AppRoutes.Message,
-    //   page: () => const MessagePage(),
-    //   binding: MessageBindings(),
-    //   middlewares: [
-    //     RouteAuthMiddleware(priority: 1),
-    //   ],
-    // ),
+    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),*/
+
+    //message
+    GetPage(
+      name: AppRoutes.message,
+      page: () => const MessagePage(),
+      binding: MessageBindings(),
+      middlewares: [
+        RouteAuthMiddleware(priority: 1),
+      ],
+    ),
 
     /*
     //我的
