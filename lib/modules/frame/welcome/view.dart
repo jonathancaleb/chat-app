@@ -26,7 +26,7 @@ class WelcomePage extends GetView<WelcomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryElement,
-      body: Container(
+      body: SizedBox(
         width: 360.w,
         height: 780.h,
         child: _buildPageHeadTitle(controller.title),
