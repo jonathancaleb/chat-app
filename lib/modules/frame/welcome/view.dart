@@ -1,5 +1,6 @@
 import 'package:chat_app/common/values/colors.dart';
 import 'package:chat_app/modules/frame/welcome/controller.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,11 +13,11 @@ class WelcomePage extends GetView<WelcomeController> {
       margin: const EdgeInsets.only(top: 350),
       child: Text(
         title,
-        style: const TextStyle(
+        style: TextStyle(
             color: AppColors.primaryElementText,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.bold,
-            fontSize: 45),
+            fontSize: 45.sp),
       ),
     );
   }
@@ -26,8 +27,8 @@ class WelcomePage extends GetView<WelcomeController> {
     return Scaffold(
       backgroundColor: AppColors.primaryElement,
       body: Container(
-        width: 360,
-        height: 780,
+        width: 360.w,
+        height: 780.h,
         child: _buildPageHeadTitle(controller.title),
       ),
     );
