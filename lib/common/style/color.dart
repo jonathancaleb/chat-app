@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  /// 页面背景颜色
+  ///background color
   static const Color scaffoldBackground = Color(0xFFFFFFFF);
 
   /// 主要背景颜色
